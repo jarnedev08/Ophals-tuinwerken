@@ -7,7 +7,78 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link href="styles.css" rel="stylesheet">
+<link href="#" rel="stylesheet">
+<style>
+
+:root{
+  --bg:#f3f5ec; --surface:#e4ead6; --ink:#1f2a1c; --muted:#4f5d49;
+  --moss:#2f5233; --leaf:#6c8f3d; --clay:#b4552d; --line:#c9d3b6;
+  --on-moss:#f3f5ec;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#131a12; --surface:#1c261b; --ink:#e9eddf; --muted:#aab59f;
+    --moss:#8fbf6a; --leaf:#8fbf6a; --clay:#e08a5f; --line:#2c3a2a;
+    --on-moss:#131a12;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#131a12; --surface:#1c261b; --ink:#e9eddf; --muted:#aab59f;
+  --moss:#8fbf6a; --leaf:#8fbf6a; --clay:#e08a5f; --line:#2c3a2a;
+  --on-moss:#131a12;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "Work Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--clay);outline-offset:3px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+header{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0;flex-wrap:wrap;gap:.75rem}
+.logo{font-family:Fraunces,Georgia,serif;font-weight:800;font-size:1.25rem;text-decoration:none}
+nav{display:flex;gap:1.25rem;font-weight:500}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.hero{padding:3rem 0 4rem;display:grid;gap:2.5rem;grid-template-columns:1.3fr 1fr;align-items:center}
+.hero h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:800;letter-spacing:-.02em}
+.hero p{max-width:34rem;color:var(--muted);font-size:1.2rem;margin:1.25rem 0 2rem}
+.btn{display:inline-block;background:var(--moss);color:var(--on-moss);padding:.9rem 1.6rem;border-radius:.4rem;font-weight:600;text-decoration:none}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--moss);margin-left:.5rem}
+.rows{display:grid;gap:.5rem}
+.row{height:2.6rem;border-radius:.3rem;background:var(--moss)}
+.row:nth-child(2n){background:var(--leaf);width:82%}
+.row:nth-child(3n){width:64%;background:var(--clay)}
+.row:nth-child(5n){width:92%}
+section{padding:4rem 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:2rem;font-weight:600}
+.services{display:grid;gap:0;grid-template-columns:repeat(2,1fr);border:1px solid var(--line)}
+.services div{padding:1.5rem;border:1px solid var(--line);margin:-.5px}
+.services h3{font-size:1.35rem;margin-bottom:.4rem;font-weight:600}
+.services p{margin:0;color:var(--muted)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.about p{margin:0 0 1rem;max-width:34rem}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;padding:0 0 1.25rem 3rem;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:2.1rem;height:2.1rem;border-radius:50%;background:var(--moss);color:var(--on-moss);display:grid;place-items:center;font-weight:600}
+.steps strong{display:block}
+.contact{background:var(--surface);border-radius:.6rem;padding:2.5rem}
+.contact dl{display:grid;grid-template-columns:auto 1fr;gap:.5rem 1.5rem;margin:1.5rem 0 0}
+.contact dt{font-weight:600}
+.contact dd{margin:0;color:var(--muted)}
+footer{padding:2rem 0;color:var(--muted);font-size:.95rem;border-top:1px solid var(--line)}
+@media (max-width:760px){
+  .hero,.about{grid-template-columns:1fr}
+  .services{grid-template-columns:1fr}
+  .btn.alt{margin:.75rem 0 0}
+  .rows{order:-1}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
 <div class="wrap">
